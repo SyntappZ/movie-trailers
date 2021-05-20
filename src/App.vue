@@ -1,30 +1,49 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view/>
+  <Nav />
+  <router-view />
 </template>
 
+<script lang="ts">
+import { defineComponent } from "vue";
+import Nav from './components/Nav.vue'
+
+export default defineComponent({
+  components: {
+    Nav,
+ 
+  },
+});
+</script>
+
 <style>
+
+:root {
+  --green: #3d9896;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  background-color: #050708;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+
+  color: #fff;
 }
 
-#nav {
-  padding: 30px;
-}
+.container {
+    padding: 15px 30px;
+    max-width: 1600px;
+    margin: auto;
+  }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+.color-green {
+  color: var(--green);
 }
 </style>
